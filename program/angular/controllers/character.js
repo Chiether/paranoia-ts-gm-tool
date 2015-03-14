@@ -14,20 +14,24 @@ app.controller('CharacterCtrl', ['CharacterService', function(CharacterService){
     };
 
     this.regist = function (scope, recv_files) {
-      var reader = new FileReader();
-      reader.files = [];
-      reader.scope = this;
-      reader.onloadend = function(){
-        if (reader.result) {
-          data = JSON.parse(reader.result);
-          CharacterService.add(data);
-          scope.$apply();
-        }
-        if(reader.files.length){ reader.readAsText(reader.files.shift()); }
-      };
-      for(var i=0, j=recv_files.length; i<j; i++){ reader.files.push(recv_files[i]); }
+        var reader = new FileReader();
+        reader.files = [];
+        reader.scope = this;
+        reader.onloadend = function(){
+            if (reader.result) {
+                var data = {};
+                try{
+                    data = JSON.parse(reader.result);
+                }catch( e ){
+                }
+                CharacterService.add(data);
+                scope.$apply();
+            }
+            if(reader.files.length){ reader.readAsText(reader.files.shift()); }
+        };
+        for(var i=0, j=recv_files.length; i<j; i++){ reader.files.push(recv_files[i]); }
         CharacterService.clear();
         scope.$apply();
         reader.onloadend(null, this);
     }
-  }]);
+}]);

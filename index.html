@@ -3,11 +3,11 @@
 <head>
     <meta charset="utf-8">
     <title>パラノイア:トラブルシューターズ UV支援ツール V1.1 L20</title>
-    <link rel="stylesheet" href="./_lib/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./_lib/bootstrap/css/dashboard.css">
-    <script src="./_lib/jQuery/jquery.min.js"></script>
-    <script src="./_lib/angularJS/angular.min.js"></script>
-    <script src="./_lib/bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./program/lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./program/lib/bootstrap/css/dashboard.css">
+    <script src="./program/lib/jQuery/jquery.min.js"></script>
+    <script src="./program/lib/angularJS/angular.min.js"></script>
+    <script src="./program/lib/bootstrap/js/bootstrap.min.js"></script>
     <style>
         .bottom-line{
             border-bottom: 1px solid #000;
@@ -24,12 +24,12 @@
     </style>
 
     <!-- angularjs projects -->
-    <script src="./_angular/app.js"></script>
-    <script src="./_angular/services/screen.js"></script>
-    <script src="./_angular/services/character.js"></script>
-    <script src="./_angular/controllers/screen.js"></script>
-    <script src="./_angular/controllers/left_panel.js"></script>
-    <script src="./_angular/controllers/character.js"></script>
+    <script src="./program/angular/app.js"></script>
+    <script src="./program/angular/services/screen.js"></script>
+    <script src="./program/angular/services/character.js"></script>
+    <script src="./program/angular/controllers/screen.js"></script>
+    <script src="./program/angular/controllers/left_panel.js"></script>
+    <script src="./program/angular/controllers/character.js"></script>
 
 </head>
 <body>
@@ -54,20 +54,20 @@
                         <li ng-repeat="record in left.characters"><a ng-click="left.request_character_show(record)">{{record['基本情報']['市民名']}}</a></li>
                     </ul>
                 </li>
-                <li><a href="#">戦闘処理</a></li>
-                <li><a href="#">武器表</a></li>
-                <li><a href="#">アイテム表</a></li>
+                <li><a href="#">戦闘処理(未実装)</a></li>
+                <li><a href="#">武器表(未実装)</a></li>
+                <li><a href="#">アイテム表(未実装)</a></li>
             </ul>
         </div>
         <div class="col-sm-10 col-md-10 col-sm-offset-2 col-md-offset-2 main" ng-controller="ScreenCtrl as screen">
             <section ng-show="screen.page.name=='welcome'">
-                <script src="./_partial/welcome.html.js"></script>
+                <script src="./program/partial/welcome.html.js"></script>
             </section>
             <section ng-show="screen.page.name=='character_create'" ng-controller="CharacterCtrl as character">
-                <script src="./_partial/character_create.html.js"></script>
+                <script src="./program/partial/character_create.html.js"></script>
             </section>
             <section ng-show="screen.page.name=='character_viewer'"  ng-controller="CharacterCtrl as character" >
-                <script src="./_partial/character_viewer.html.js"></script>
+                <script src="./program/partial/character_viewer.html.js"></script>
             </section>
         </div>
     </div>
