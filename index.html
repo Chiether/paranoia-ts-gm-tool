@@ -27,9 +27,11 @@
     <script src="./program/angular/app.js"></script>
     <script src="./program/angular/services/screen.js"></script>
     <script src="./program/angular/services/character.js"></script>
+    <script src="./program/angular/services/weapon.js"></script>
     <script src="./program/angular/controllers/screen.js"></script>
     <script src="./program/angular/controllers/left_panel.js"></script>
     <script src="./program/angular/controllers/character.js"></script>
+    <script src="./program/angular/controllers/weapon.js"></script>
 
 </head>
 <body>
@@ -55,7 +57,7 @@
                     </ul>
                 </li>
                 <li><a href="#">戦闘処理(未実装)</a></li>
-                <li><a href="#">武器表(未実装)</a></li>
+                <li><a ng-click="left.request_weapon_viewer()">武器表</a></li>
                 <li><a href="#">アイテム表(未実装)</a></li>
             </ul>
         </div>
@@ -68,6 +70,9 @@
             </section>
             <section ng-show="screen.page.name=='character_viewer'"  ng-controller="CharacterCtrl as character" >
                 <script src="./program/partial/character_viewer.html.js"></script>
+            </section>
+            <section ng-show="screen.page.name=='weapon_viewer'"  ng-controller="WeaponCtrl as weapon" ng-init="weapon.init();">
+                <script src="./program/partial/weapon_viewer.html.js"></script>
             </section>
         </div>
     </div>

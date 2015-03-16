@@ -10,4 +10,8 @@ app.controller('LeftPanelCtrl', ['$scope', 'ScreenService', 'CharacterService', 
         CharacterService.use(record);
     };
 
+    this.request_weapon_viewer = function(){
+        ScreenService.page.name = 'weapon_viewer';
+    }
+
 }]);
