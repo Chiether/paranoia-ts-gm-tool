@@ -31,6 +31,7 @@
     <script src="./program/angular/controllers/screen.js"></script>
     <script src="./program/angular/controllers/left_panel.js"></script>
     <script src="./program/angular/controllers/character.js"></script>
+    <script src="./program/angular/controllers/battle.js"></script>
     <script src="./program/angular/controllers/weapon.js"></script>
 
 </head>
@@ -56,7 +57,7 @@
                         <li ng-repeat="record in left.characters"><a ng-click="left.request_character_show(record)">{{record['基本情報']['市民名']}}</a></li>
                     </ul>
                 </li>
-                <li><a href="#">戦闘処理(未実装)</a></li>
+                <li><a ng-click="left.request_battle_action()">戦闘処理</a></li>
                 <li><a ng-click="left.request_weapon_viewer()">武器表</a></li>
                 <li><a href="#">アイテム表(未実装)</a></li>
             </ul>
@@ -70,6 +71,9 @@
             </section>
             <section ng-show="screen.page.name=='character_viewer'"  ng-controller="CharacterCtrl as character" >
                 <script src="./program/partial/character_viewer.html.js"></script>
+            </section>
+            <section ng-show="screen.page.name=='battle_action'"  ng-controller="BattleCtrl as battle" ng-init="battle.init();">
+                <script src="./program/partial/battle_action.html.js"></script>
             </section>
             <section ng-show="screen.page.name=='weapon_viewer'"  ng-controller="WeaponCtrl as weapon" ng-init="weapon.init();">
                 <script src="./program/partial/weapon_viewer.html.js"></script>
